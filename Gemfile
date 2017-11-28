@@ -39,9 +39,10 @@ gem 'simple_form','~>3.1.0'
 gem 'devise','~>3.4.1'
 gem 'pundit','~>0.3.0'
 gem 'carrierwave','~>0.10.0'
-gem "fog", "~> 1.29.0"
+#gem 'fog', "~> 1.29.0"
 gem 'sqlite3'
-gem 'will_paginate',        '3.0.7'
+#gem 'will_paginate',        '3.0.7'
+gem 'kaminari'
 gem 'bootstrap-will_paginate', '0.0.10'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
