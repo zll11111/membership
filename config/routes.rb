@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  #root 'home#index'
+  mount Judge::Engine => '/judge'
+  devise_for :users,path_names:{sign_in:'login',sign_out:'logout',sign_up:'signup'}
+  devise_scope :users do
+    root 'home#index'
+    #get 'sign_in',to: "devise/sessions#new"
+  end
+  #get 'users/login',to: "devise/sessions#new"
+  #get 'sign_in',to: "devise/sessions#new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +62,26 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+=begin
+  scope 'admin' ,as:'admins' do
+    resources :users
+
+  end
+
+  namespace 'admin' do
+    resources :projects
+  end
+
+  scope module: 'audit' do
+    resources :articles
+  end
+
+  scope '/audit' do
+    resources :comments
+  end
+  scope '/audit' do
+    resources :tickets
+  end
+=end
 end

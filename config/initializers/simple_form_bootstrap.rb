@@ -7,6 +7,10 @@ SimpleForm.setup do |config|
   config.wrappers :vertical_form, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder
+
+    # judge gem
+    b.use :judge
+
     b.optional :maxlength
     b.optional :pattern
     b.optional :min_max

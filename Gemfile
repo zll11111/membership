@@ -44,6 +44,9 @@ gem 'sqlite3'
 #gem 'will_paginate',        '3.0.7'
 gem 'kaminari'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'rails-i18n', '~> 4.0.0'
+gem 'judge-simple_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -52,14 +55,18 @@ end
 
 group :test do
   gem 'capybara', '~>2.4'
-  gem 'factory_girl_rails','~>4.5'
+  gem 'factory_bot_rails','~>4.0'
   gem 'selenium-webdriver','~>2.53.1'
   gem 'database_cleaner','~>1.4'
+  gem 'simplecov',require:false
 end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem "better_errors"
+  gem "binding_of_caller"
+  # Spring speeds up deevelopment by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'meta_request'
 end
